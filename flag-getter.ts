@@ -8,7 +8,7 @@ export class FlagGetter extends S3Loader {
   private expiration: number = Date.now();
   private data: any;
 
-  constructor(options?: S3.Types.ClientConfiguration & { s3Options: { expire: number, Bucket: string, Key: string } }) {
+  constructor(options?: S3.Types.ClientConfiguration & { s3Options: { expire?: number, Bucket: string, Key: string } }) {
     super(options);
     this.expire = (options.s3Options.expire || 60 * 60) * 1000;
   }
